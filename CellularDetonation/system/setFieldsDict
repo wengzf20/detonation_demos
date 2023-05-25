@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      setFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+defaultFieldValues
+(
+
+);
+
+regions
+(
+    boxToCell // 10dl x 150dl
+    {
+        box (0 0 0) (5.9984e-5 1 1);
+        fieldValues
+        (
+            volScalarFieldValue T 3600 // initiation zone: set as the CJ state, pressure is higher than P_CJ
+            volScalarFieldValue p 1.4e8 
+            volVectorFieldValue U (1376.09 0 0) 
+            volScalarFieldValue R 0
+            volScalarFieldValue P 1
+        );
+    }
+    boxToCell //5dl*5dl
+    {
+        box (5.9984e-5 0.00016616 0) (8.9976e-05 0.00019615 1);
+        fieldValues
+        (
+            volScalarFieldValue T 3600 
+            volScalarFieldValue p 1.4e8
+        );
+    }
+    boxToCell //5dl*5dl
+    {
+        box (5.9984e-5 0.00034611 0) (8.9976e-05 0.0003761 1);
+        fieldValues
+        (
+            volScalarFieldValue T 3600 
+            volScalarFieldValue p 1.4e8
+        );
+    }
+    boxToCell //5dl*5dl
+    {
+        box (5.9984e-5 0.00052606 0) (8.9976e-05 0.00055605 1);
+        fieldValues
+        (
+            volScalarFieldValue T 3600 
+            volScalarFieldValue p 1.4e8
+        );
+    }
+    boxToCell //5dl*5dl
+    {
+        box (5.9984e-5 0.00070601 0) (8.9976e-05 0.000736  1);
+        fieldValues
+        (
+            volScalarFieldValue T 3600 
+            volScalarFieldValue p 1.4e8
+        );
+    }
+);
+
+
+// ************************************************************************* //
