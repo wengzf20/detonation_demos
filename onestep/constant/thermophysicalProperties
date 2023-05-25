@@ -1,0 +1,92 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType
+{
+    type            heRhoThermo;
+    mixture         multiComponentMixture;
+    transport       const;
+    thermo          hConst;
+    energy          sensibleEnthalpy;
+    equationOfState perfectGas;
+    specie          specie;
+}
+
+inertSpecie inert;
+
+species
+(
+    R
+    P
+    inert 
+);
+
+
+R
+{
+    specie
+    {
+        molWeight       12;
+    }
+    thermodynamics
+    {
+        Cp          4157.23105;  // [J/kg/K], \gamma = 1.2
+        Hf          0;          // Enthalpy of formation [J/kg]
+    }
+    transport
+    {
+        mu              0;
+        Pr              1;
+    }
+}
+
+P
+{
+    specie
+    {
+        molWeight       12;             // [kg/kmol]
+    }
+    thermodynamics
+    {
+        Cp          4157.23105;          // [J/kg/K], \gamma = 1.2
+        Hf          -10393077.625;      // Enthalpy of formation [J/kg]
+    }
+    transport
+    {
+        mu              0;
+        Pr              1;
+    }
+}
+
+inert   // copy from A
+{
+    specie
+    {
+        molWeight       12;
+    }
+    thermodynamics
+    {
+        Cp          4157.23105;  // [J/kg/K], \gamma = 1.2
+        Hf          0;          // Enthalpy of formation [J/kg]
+    }
+    transport
+    {
+        mu              0;
+        Pr              1;
+    }
+}
+
+// ************************************************************************* //
