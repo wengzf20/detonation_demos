@@ -8,4 +8,4 @@ A collection of demos for detonation and chemistry studies
 
 
 ## reference
-- Taileb, S., Melguizo-Gavilanes, J., Chinnayya, A., 2020. Influence of the chemical modeling on the quenching limits of gaseous detonation waves confined by an inert layer. Combustion and Flame 218, 247–259. https://doi.org/10.1016/j.combustflame.2020.04.018
+- Taileb, S., Melguizo-Gavilanes, J., Chinnayya, A., 2021. The influence of the equation of state on the cellular structure of gaseous detonations. Physics of Fluids 33, 036105 (2021). https://doi.org/10.1063/5.0040723
